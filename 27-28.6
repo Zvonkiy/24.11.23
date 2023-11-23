@@ -1,0 +1,10 @@
+n = int(input())
+
+total_duration = 0
+for _ in range(n):
+    duration = int(input())
+    total_duration += duration
+hours = total_duration // 60 
+minutes = total_duration % 60 
+
+print(hours, minutes)
