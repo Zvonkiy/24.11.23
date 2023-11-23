@@ -1,0 +1,22 @@
+d = int(input())
+frames = []
+while True:
+    frame = int(input())
+    if frame == -1:
+        break
+    frames.append(frame)
+
+scene_frames = 0
+scene_number = 1
+
+for frame in frames:
+    if frame == -1:
+        if scene_frames % scene_number != 0:
+            print("NO")
+            break
+        scene_number += 1
+        scene_frames = 0
+    else:
+        scene_frames += 1
+else:
+    print("YES")
