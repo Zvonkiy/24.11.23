@@ -1,0 +1,14 @@
+yesterday_names = ['Александр', 'Петр', 'Лев', 'Мария', 'Елизавета', 'Юлия']
+today_names = []
+
+while True:
+    name = input()
+    if name == 'END':
+        break
+    today_names.append(name)
+
+count = 0
+for name in yesterday_names:
+    count += today_names.count(name)
+
+print(count)
