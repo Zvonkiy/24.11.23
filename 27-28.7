@@ -1,0 +1,16 @@
+scenes = []
+while True:
+    duration = int(input())
+    if duration == -1:
+        break
+    scenes.append(duration)
+
+previous_duration = scenes[0]
+
+for duration in scenes[1:]:
+    if duration != previous_duration * 2:
+        print("NO")
+        break
+    previous_duration = duration
+else:
+    print("YES")
