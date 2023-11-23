@@ -1,0 +1,27 @@
+def analyze_film(frames, width, height, pixels):
+    total_pixels = frames * width * height
+    white_count = pixels.count(1)
+    light_gray_count = pixels.count(2)
+    dark_gray_count = pixels.count(3)
+    black_count = pixels.count(4)
+
+    light_colors = white_count + light_gray_count
+    dark_colors = dark_gray_count + black_count
+
+    light_ratio = light_colors / total_pixels
+    dark_ratio = dark_colors / total_pixels
+
+    if abs(light_ratio - dark_ratio) > 0.2:
+        if light_ratio > dark_ratio:
+            print("фильм засвечен")
+        else:
+            print("фильм затемнен")
+    else:
+        print("фильм снят с соблюдением световых пропорций")
+
+
+input_values = list(map(int, input().split()))
+n, w, h = input_values[:3]
+colors = list(map(int, input().split()))
+
+analyze_film(n, w, h, colors)
