@@ -1,0 +1,13 @@
+def liked_films_hypothesis(n, reviews):
+    liked_films = [i for i in range(1, n+1) if (i & (i-1)) == 0]
+    for pos in liked_films:
+        if reviews[pos-1] == '-':
+            return "NO"
+    return "YES"
+
+
+n = int(input())
+reviews = [input() for _ in range(n)]
+
+result = liked_films_hypothesis(n, reviews)
+print(result)
