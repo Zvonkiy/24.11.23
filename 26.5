@@ -1,0 +1,12 @@
+def calculate_composers(n, m, k, b):
+    for year in range(n, m):
+        k = (k + b) ** 2
+    return int(k)
+
+n = int(input())
+m = int(input())
+k = int(input())
+b = int(input())
+
+result = calculate_composers(n, m, k, b)
+print(result)
